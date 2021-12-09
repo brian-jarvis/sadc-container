@@ -1,0 +1,28 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: collector-script
+  namespace: node-performance-monitoring
+  labels:
+    app: sadc-collector
+data:
+  collect: |-
+    #!/usr/bin/bash
+
+    if [ ! -d "/var/log/sa" ]
+    then
+      echo "Initialize logging paths for data collection"
+      mkdir -p /var/log/sa
+    fi
+
+    echo "Beginning process to collect performance data"
+    while :
+    do
+      echo "$(date) Capturing data"
+      /usr/lib64/sa/sa1 1 1
+
+      ## sleep till the next time ${sadc_frequency}
+      sleep ${sadc_frequency}
+    done
+    exit 0
+

@@ -1,0 +1,9 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: node-performance-monitoring
+  labels:
+    app: sadc-collector
+  annotations:
+    openshift.io/node-selector: ''
+ 

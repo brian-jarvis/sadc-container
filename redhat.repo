@@ -1,0 +1,10 @@
+[rhel-8-for-x86_64-appstream-rpms]
+name = Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
+baseurl = https://cdn.redhat.com/content/dist/rhel8/$releasever/x86_64/appstream/os
+enabled = 1
+gpgcheck = 0
+sslverify = 0
+sslcacert = /etc/rhsm-host/ca/redhat-uep.pem
+sslclientkey = /etc/pki/entitlement-host/entitlement-key.pem
+sslclientcert = /etc/pki/entitlement-host/entitlement.pem
+
