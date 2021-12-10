@@ -1,0 +1,14 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: sadc-privileged
+  labels:
+    app: sadc-collector
+subjects:
+  - kind: ServiceAccount
+    name: sadc-collector
+    namespace: node-performance-monitoring
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sadc-privileged
